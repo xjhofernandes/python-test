@@ -3,25 +3,20 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/www/project
-# permissions:
-#   - object: /home/ec2-user/www
-#     pattern: "**"
-#     owner: ec2-user
-#     group: ec2-user
 hooks:
   BeforeInstall:
-    - location: scripts/clean_instance.sh
-      timeout: 6000
+    - location: scripts/before_teste.sh
+      timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/install_os_dependencies.sh
-      timeout: 6000
+    - location: scripts/after_teste.sh
+      timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start_application.sh
-      timeout: 6000
+    - location: scripts/start_server.sh
+      timeout: 300
       runas: ec2-user
   ApplicationStop:
-    - location: scripts/stop_application.sh
-      timeout: 6000
+    - location: scripts/stop_teste.sh
+      timeout: 300
       runas: ec2-user
