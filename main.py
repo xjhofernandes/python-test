@@ -4,7 +4,6 @@ from fastapi.testclient import TestClient
 
 app = FastAPI()
 
-
 @app.get("/")
 def read_root():
     return {"Hello": "MOTHER FUCKER"}
