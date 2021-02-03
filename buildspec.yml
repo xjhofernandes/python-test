@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+       python: 3.7
+  pre_build:
+    commands:
+      - pip3 install -r requirements.txt
+      #- pip install -e .
+  build:
+    commands:
+      - pytest main.py
