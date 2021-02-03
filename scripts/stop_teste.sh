@@ -1,1 +1,1 @@
-echo "Stop"
+systemctl stop python.service
